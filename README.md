@@ -1,5 +1,5 @@
 # Tarea Reina Ajedrez
-## Profesor: José Ramón Jiménez Reyes
+## Profesor: Juan Antonio Muñoz Almansa
 ## Alumno:
 
 La tarea va a consistir en modelar el movimiento de una reina de ajedrez por el tablero de dicho juego.
