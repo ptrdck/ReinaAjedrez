@@ -171,11 +171,15 @@ public class Reina {
 			posicion = new Posicion(fila, columna);
 			
 			break;
-			
-			
+				
 		}
-		
 	}
+
+	@Override
+	public String toString() {
+		return "Reina [color=" + color + ", posicion=" + posicion + "]";
+	}
+	
 }
 	
 
