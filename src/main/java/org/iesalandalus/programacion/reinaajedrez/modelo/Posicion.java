@@ -6,6 +6,13 @@ public class Posicion {
 	private char columna;
 	
 	
+	public Posicion(int fila, char columna)
+	{
+		this.fila = fila;
+		this.columna = columna;
+		
+	}
+	
 	
 	private void setFila(int fila) 
 	{
