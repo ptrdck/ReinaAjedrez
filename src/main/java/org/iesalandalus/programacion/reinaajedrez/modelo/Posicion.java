@@ -55,12 +55,14 @@ public class Posicion {
 	}
 
 	@Override
-	public int hashCode() {
+	public int hashCode() 
+	{
 		return Objects.hash(fila, columna);
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj)
+	{
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -70,6 +72,12 @@ public class Posicion {
 		Posicion other = (Posicion) obj;
 		return fila == other.fila && columna == other.columna;
 	}
+
+	@Override
+	public String toString() {
+		return "Posicion [fila=" + fila + ", columna=" + columna + "]";
+	}
+	
 	
 
 	
