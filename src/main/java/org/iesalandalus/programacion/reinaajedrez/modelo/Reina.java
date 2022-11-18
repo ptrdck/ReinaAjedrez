@@ -11,6 +11,19 @@ public class Reina {
 		setColor(Color.BLANCO);
 		setPosicion(new Posicion(1, 'd'));
 	}
+	
+	public Reina(Color color)
+	{
+		if (color == Color.BLANCO)
+		{
+			setPosicion(new Posicion(1,'d'));
+		}
+		if (color == Color.NEGRO)
+		{
+			setPosicion(new Posicion(8, 'b'));
+		}
+		
+	}
 
 	public Color getColor() 
 	{
