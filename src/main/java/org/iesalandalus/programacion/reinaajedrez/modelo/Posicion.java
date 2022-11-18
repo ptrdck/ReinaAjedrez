@@ -8,11 +8,21 @@ public class Posicion {
 	
 	public Posicion(int fila, char columna)
 	{
-		this.fila = fila;
-		this.columna = columna;
+		setFila(fila);
+		setColumna(columna);
 		
 	}
 	
+	public Posicion(Posicion posicion)
+	{
+		if (posicion == null) 
+		{
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
+			
+		}
+		setFila(posicion.getFila());
+		setColumna(posicion.getColumna());
+	}
 	
 	private void setFila(int fila) 
 	{
