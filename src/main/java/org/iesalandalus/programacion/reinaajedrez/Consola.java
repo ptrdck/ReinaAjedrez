@@ -80,8 +80,8 @@ public class Consola {
 	
 	public static void mostrarMenuDirecciones() 
 	{
-		System.out.println("Elija una dirección para mover la REINA");
-		System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::");
+		System.out.println("Menú de direcciones de movimiento de la REINA");
+		System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::");
 		System.out.println("1.- Norte ");
 		System.out.println("2.- Noreste ");
 		System.out.println("3.- Este ");
@@ -90,6 +90,60 @@ public class Consola {
 		System.out.println("6.- Suroeste ");
 		System.out.println("7.- Oeste ");
 		System.out.println("8.- Noroeste ");
+	}
+	
+	public static Direccion elegirDireccion()
+	{
+		
+		int eligedireccion;
+		boolean bandera = false;
+		
+		do
+		{
+			System.out.println("Elija una dirección para mover la REINA");
+			eligedireccion = Entrada.entero();
+			
+			if (eligedireccion>8 || eligedireccion<1)
+			{
+				System.out.println("Opción inválida, intente nuevamente");
+				bandera = true;
+			}
+				
+		}while (bandera == true);
+		
+		if (eligedireccion == 1)
+		{
+			return Direccion.NORTE;
+		}
+		else if (eligedireccion == 2)
+		
+		{
+			return Direccion.NORESTE;
+		}
+		else if (eligedireccion == 3)
+		{
+			return Direccion.ESTE;
+		}
+		else if (eligedireccion == 4)
+		{
+			return Direccion.SURESTE;
+		}
+		else if (eligedireccion == 5)
+		{
+			return Direccion.SUR;
+		}
+		else if (eligedireccion == 6)
+		{
+			return Direccion.SUROESTE;
+		}
+		else if (eligedireccion == 7)
+		{
+			return Direccion.OESTE;
+		}
+		else
+		{
+			return Direccion.NOROESTE;
+		}
 	}
 
 }
