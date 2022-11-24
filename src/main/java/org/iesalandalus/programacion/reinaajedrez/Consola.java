@@ -1,6 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
 import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
+import org.iesalandalus.programacion.reinaajedrez.modelo.Direccion;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
@@ -42,7 +43,8 @@ public class Consola {
 		return opcion;
 	}
 	
-	public static Color elegirOpcion() {
+	public static Color elegirOpcion() 
+	{
 		
 		int eligecolor;
 		boolean malcolor = false;
@@ -74,6 +76,20 @@ public class Consola {
 			return Color.NEGRO;
 		}
 		
+	}
+	
+	public static void mostrarMenuDirecciones() 
+	{
+		System.out.println("Elija una dirección para mover la REINA");
+		System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::");
+		System.out.println("1.- Norte ");
+		System.out.println("2.- Noreste ");
+		System.out.println("3.- Este ");
+		System.out.println("4.- Sureste ");
+		System.out.println("5.- Sur ");
+		System.out.println("6.- Suroeste ");
+		System.out.println("7.- Oeste ");
+		System.out.println("8.- Noroeste ");
 	}
 
 }
