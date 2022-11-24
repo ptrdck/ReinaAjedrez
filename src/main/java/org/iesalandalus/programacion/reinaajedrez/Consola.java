@@ -156,5 +156,10 @@ public class Consola {
 		
 		return eligepasos;
 	}
+	
+	public static void despedirse()
+	{
+		System.out.println("¡¡¡Hasta pronto!!!");
+	}
 
 }
