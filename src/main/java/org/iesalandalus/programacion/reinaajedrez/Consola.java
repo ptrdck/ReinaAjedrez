@@ -145,5 +145,16 @@ public class Consola {
 			return Direccion.NOROESTE;
 		}
 	}
+	
+	public static int elegirPasos()
+	{
+		int eligepasos;
+		
+		System.out.println("Elija un número de pasos que desea mover la REINA");
+		
+		eligepasos = Entrada.entero();
+		
+		return eligepasos;
+	}
 
 }
