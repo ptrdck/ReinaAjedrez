@@ -1,5 +1,6 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
+import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
@@ -39,6 +40,40 @@ public class Consola {
 		}while (mal == true);
 		
 		return opcion;
+	}
+	
+	public static Color elegirOpcion() {
+		
+		int eligecolor;
+		boolean malcolor = false;
+		
+		do
+		{
+
+			System.out.println("Elija un color para la REINA");
+			System.out.println(":::::::::::::::::::::::::::::::");
+			System.out.println("1.- Blanco");
+			System.out.println("2.- Negro");
+			
+			eligecolor = Entrada.entero();
+			
+			if (eligecolor>2 || eligecolor<1)
+			{
+				System.out.println("Opción no válida, intente nuevamente");
+				malcolor = true;
+			}
+			
+		}while (malcolor == true);
+		
+		if (eligecolor == 1)
+		{
+			return Color.BLANCO;
+		}
+		else 
+		{
+			return Color.NEGRO;
+		}
+		
 	}
 
 }
