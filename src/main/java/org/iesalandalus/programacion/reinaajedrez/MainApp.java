@@ -10,33 +10,68 @@ public class MainApp {
 	
 	public static void main(String[] args) {
 		
+		Consola.mostrarMenu();
+		ejecutarOpcion(Consola.elegirOpcionMenu());
 		
 	}
 	
-	/*
+	
 	private static void ejecutarOpcion(int opcion)
 	{
 		switch (opcion)
 		{
 		case 1:
 		{
-			crearReinaDefecto();
+			try {
+				
+				crearReinaDefecto();
+				
+				mostrarReina();
+				mover();
+				mostrarReina();
+				
+			}catch(Exception e){
+				
+				System.out.println(e + "ERROR: Movimiento no válido (se sale del tablero).");
+				
+				
+			}finally {
+				Consola.despedirse();
+			}
+		break;	
 		}
 		case 2:
 		{
-			reina = new Reina(Consola.elegirOpcion());
+			try {
+				reina = new Reina(Consola.elegirOpcion());
+				
+				mostrarReina();
+				mover();
+				mostrarReina();
+			}catch(Exception e)
+			{
+				System.out.println(e + "ERROR: Movimiento no válido (se sale del tablero).");
+			}finally
+			{
+				Consola.despedirse();
+			}
+			break;
 		}
 		case 3:
 		{
+			mostrarReina();
+			Consola.mostrarMenu();
+			ejecutarOpcion(Consola.elegirOpcionMenu());
 			
+			break;
 		}
 		case 4:
 		{
-			
+			Consola.despedirse();
+			break;
 		}
 		}
 	}
-	*/
 	
 	private static void crearReinaDefecto()
 	{
