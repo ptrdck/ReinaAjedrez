@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
 
 public class MainApp {
@@ -46,5 +48,30 @@ public class MainApp {
 		reina = new Reina();
 	}
 	
+	private static void mover()
+	{
+		Consola.mostrarMenuDirecciones();
+		try {
+			reina.mover(Consola.elegirDireccion(),Consola.elegirPasos());
+		}catch (OperationNotSupportedException e) {
+			
+			System.out.println("ERROR: Movimiento no válido (se sale del tablero).");
+		}
+		
+			
+			
+	}
+	
+	private static void mostrarReina()
+	{
+		if (reina != null) {
+			
+			System.out.println("reina=" + reina + "]");
+			
+		}else
+		{
+			System.out.println("La REINA no está en juego o aún no ha sido creada");
+		}
+	}
 	
 }
