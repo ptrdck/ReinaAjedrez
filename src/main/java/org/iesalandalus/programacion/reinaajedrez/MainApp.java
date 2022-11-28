@@ -163,7 +163,7 @@ public class MainApp {
 			System.out.println("");
 			
 		} 
-		catch (OperationNotSupportedException | NullPointerException | IllegalArgumentException e)
+		catch (NullPointerException | OperationNotSupportedException | IllegalArgumentException e)
 		{
 			System.out.print(e.getMessage());
 			System.out.println("");
@@ -177,7 +177,7 @@ public class MainApp {
 				reina.mover(Consola.elegirDireccion(), Consola.elegirPasos());
 				System.out.println("");
 			} 
-			catch	(OperationNotSupportedException | NullPointerException | IllegalArgumentException e) 
+			catch	(NullPointerException |OperationNotSupportedException | IllegalArgumentException e) 
 			{
 				System.out.print(e.getMessage());
 				System.out.println("");

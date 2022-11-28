@@ -6,7 +6,8 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
 	
-	
+
+
 	// Constructor para métodos sin atributos.
 	private Consola()
 	{
@@ -115,7 +116,7 @@ public class Consola {
 	
 		System.out.println("Elija una dirección para mover la REINA");
 		eligedireccion = Entrada.entero();
-	
+		
 		
 		// establece la dirección en que se moverá la reina según la correspondencia con el menú de direcciones. 
 		if (eligedireccion == 1)

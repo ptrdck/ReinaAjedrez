@@ -169,11 +169,6 @@ public class Reina {
 			{
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 			}
-			columna = (char) (posicion.getColumna() - pasos);
-			if (columna < 'a')
-			{
-				throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
-			}
 			posicion = new Posicion(fila, columna);
 			
 			break;
