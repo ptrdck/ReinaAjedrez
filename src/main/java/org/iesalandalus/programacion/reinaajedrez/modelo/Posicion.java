@@ -4,10 +4,13 @@ import java.util.Objects;
 
 public class Posicion {
 	
+	
+	//declaración de variables a usar para obtener la posición de REINA
 	private int fila;
 	private char columna;
 	
 	
+	// Constructor de objeto tipo Posición.
 	public Posicion(int fila, char columna)
 	{
 		setFila(fila);
@@ -15,8 +18,10 @@ public class Posicion {
 		
 	}
 	
+	// COnstructor copia
 	public Posicion(Posicion posicion)
 	{
+		//instrucción para invalidar una posición en caso de que sea nula
 		if (posicion == null) 
 		{
 			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
@@ -26,6 +31,7 @@ public class Posicion {
 		setColumna(posicion.getColumna());
 	}
 	
+	//Método set para insertar una fila y evaluar si es válida
 	private void setFila(int fila) 
 	{
 		if (fila<1 && fila>8) {
@@ -35,11 +41,13 @@ public class Posicion {
 		
 	}
 	
+	//método get para obtener la fila
 	public int getFila() 
 	{
 		return fila;
 	}
 	
+	// método para insertar y validar una columna 
 	private void setColumna(char columna) 
 	{
 		if (columna<'a' && columna>'h')
@@ -49,11 +57,13 @@ public class Posicion {
 		this.columna = columna;
 	}
 
+	//Obtener columna
 	public char getColumna() 
 	{
 		return columna;
 	}
 
+	// métodos hash y equals
 	@Override
 	public int hashCode() 
 	{
@@ -73,6 +83,7 @@ public class Posicion {
 		return fila == other.fila && columna == other.columna;
 	}
 
+	// método toString para imprimir en pantalla la posición. 
 	@Override
 	public String toString() {
 		return "Posicion [fila=" + fila + ", columna=" + columna + "]";

@@ -6,11 +6,14 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
 	
+	
+	// Constructor para métodos sin atributos.
 	private Consola()
 	{
 		
 	}
 	
+	// Creación de método mostrarMenu para imprimir en pantalla las opciones de la aplicación. 
 	public static void mostrarMenu() 
 	{
 		
@@ -23,8 +26,10 @@ public class Consola {
 		
 	}
 	
+	// método para elegir una opción del menú a través de un do-while para asegurar la correcta entrada por teclado
 	public static int elegirOpcionMenu() 
 	{
+		//inicialización de variables locales de entero y un booleano para verificar confición
 		int opcion;
 		boolean mal = false;
 		
@@ -37,18 +42,24 @@ public class Consola {
 			{
 				System.out.println("La opción ingresada no es válida");
 				mal = true;
-			}
+			} else
+				
+				mal = false;
+			
 		}while (mal == true);
 		
 		return opcion;
 	}
 	
+	// método para elegir color de REINA
 	public static Color elegirOpcion() 
 	{
-		
+		//inicialización de variables de tipo entero, booleano y de Color
 		int eligecolor;
 		boolean malcolor = false;
+		Color elegiropcion;
 		
+		//ciclo do-while para verificar la validez de la entrada por teclado. 
 		do
 		{
 
@@ -63,25 +74,28 @@ public class Consola {
 			{
 				System.out.println("Opción no válida, intente nuevamente");
 				malcolor = true;
-			}
+			} else
+				
+				malcolor=false;
 			
 		}while (malcolor == true);
 		
 		if (eligecolor == 1)
 		{
-			return Color.BLANCO;
+			elegiropcion = Color.BLANCO;
 		}
-		else 
+		else
 		{
-			return Color.NEGRO;
+			elegiropcion = Color.NEGRO;
 		}
-		
+		return elegiropcion;
 	}
 	
+	//Método que imprime por pantalla las posibles direcciones en que se moverá la REINA
 	public static void mostrarMenuDirecciones() 
 	{
 		System.out.println("Menú de direcciones de movimiento de la REINA");
-		System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::");
+		System.out.println("::::::::::::::::::::::::::::::::::::::::::::::");
 		System.out.println("1.- Norte ");
 		System.out.println("2.- Noreste ");
 		System.out.println("3.- Este ");
@@ -92,9 +106,11 @@ public class Consola {
 		System.out.println("8.- Noroeste ");
 	}
 	
+	// método que pedirá por teclado la dirección en que se moverá la Reina
 	public static Direccion elegirDireccion()
 	{
-		
+		//iniciacilización de variables locales. Un entero para ingresar la opción
+		//y un booleano para la verificación de la entrada mediante un ciclo do-while
 		int eligedireccion;
 		boolean bandera = false;
 		
@@ -107,10 +123,12 @@ public class Consola {
 			{
 				System.out.println("Opción inválida, intente nuevamente");
 				bandera = true;
-			}
+			} else 
+				bandera = false;
 				
 		}while (bandera == true);
 		
+		// establece la dirección en que se moverá la reina según la correspondencia con el menú de direcciones. 
 		if (eligedireccion == 1)
 		{
 			return Direccion.NORTE;
@@ -146,17 +164,33 @@ public class Consola {
 		}
 	}
 	
+	// método para ingresar el número de pasos que se moverá la Reina.
 	public static int elegirPasos()
 	{
 		int eligepasos;
+		boolean bandera = false;
+		do 
+		{
+			System.out.println("Elija un número de pasos que desea mover la REINA");
+			
+			eligepasos = Entrada.entero();
+			
+			if (eligepasos < 1 || eligepasos > 7) {
+				
+				System.out.println(" El número de pasos ingresado no es válido ");
+				
+				bandera = true;
+			}
+			else 
+				bandera = false;
+		} while (bandera == true);
 		
-		System.out.println("Elija un número de pasos que desea mover la REINA");
-		
-		eligepasos = Entrada.entero();
 		
 		return eligepasos;
 	}
 	
+	
+	// método para despedirse a través de un mensaje impreso por pantalla. 
 	public static void despedirse()
 	{
 		System.out.println("¡¡¡Hasta pronto!!!");
