@@ -4,6 +4,15 @@ import javax.naming.OperationNotSupportedException;
 
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
 
+
+
+/*
+ * @author: Pedro Patricio Cárdenas Figueroa
+ * Tarea 03 Online - Programación DAM22/23
+ * enlace GitHub: https://github.com/ptrdck/ReinaAjedrez.git
+ * 
+ * 
+ */
 public class MainApp {
 	
 	// declaración de atributo de clase
