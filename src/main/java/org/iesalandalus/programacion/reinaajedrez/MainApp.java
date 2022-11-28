@@ -100,10 +100,14 @@ public class MainApp {
 			try 
 			{
 				mostrarReina();
-				Consola.mostrarMenuDirecciones();
-				mover();
-				mostrarReina();
-				System.out.println("");
+				if (reina != null)
+				{
+					Consola.mostrarMenuDirecciones();
+					mover();
+					mostrarReina();
+					System.out.println("");
+				}
+			
 			}
 			catch(Exception e)
 			{
@@ -159,7 +163,7 @@ public class MainApp {
 			System.out.println("");
 			
 		} 
-		catch (OperationNotSupportedException | NullPointerException e)
+		catch (OperationNotSupportedException | NullPointerException | IllegalArgumentException e)
 		{
 			System.out.print(e.getMessage());
 			System.out.println("");
@@ -173,7 +177,7 @@ public class MainApp {
 				reina.mover(Consola.elegirDireccion(), Consola.elegirPasos());
 				System.out.println("");
 			} 
-			catch	(OperationNotSupportedException | NullPointerException e) 
+			catch	(OperationNotSupportedException | NullPointerException | IllegalArgumentException e) 
 			{
 				System.out.print(e.getMessage());
 				System.out.println("");
