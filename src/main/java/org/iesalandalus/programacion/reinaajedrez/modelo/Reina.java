@@ -20,6 +20,7 @@ public class Reina {
 	//Creación de constructor con parámetro color que determinará la posición
 	public Reina(Color color)
 	{
+		
 		if (color == Color.BLANCO)
 		{
 			setColor(Color.BLANCO);
@@ -95,13 +96,9 @@ public class Reina {
 			
 		case NORESTE:
 			fila = posicion.getFila() + pasos;
-			if (fila > 8)
-			{
-				throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
-			}
-
 			columna = (char) (posicion.getColumna() + pasos);
-			if (columna > 'h')
+			
+			if (columna > 'h' || fila>8)
 			{
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 			}
@@ -122,12 +119,8 @@ public class Reina {
 			
 		case SURESTE:
 			fila = posicion.getFila() - pasos;
-			if (fila < 1)
-			{
-				throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
-			}
 			columna = (char) (posicion.getColumna() + pasos);
-			if (columna > 'h')
+			if ( fila <1 || columna > 'h')
 			{
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 			}
@@ -148,12 +141,9 @@ public class Reina {
 			
 		case SUROESTE:
 			fila = posicion.getFila() - pasos;
-			if (fila < 1)
-			{
-				throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
-			}
-			columna = (char) (posicion.getColumna() - pasos);
-			if (columna < 'a')
+			columna = (char)(posicion.getColumna() - pasos);
+			
+			if (fila < 1 || columna <'a')
 			{
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 			}
@@ -164,7 +154,7 @@ public class Reina {
 		case OESTE:
 			fila = posicion.getFila();
 			columna = (char) (posicion.getColumna() - pasos);
-			if (fila < 1)
+			if (columna < 'a')
 			{
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 			}
@@ -174,7 +164,8 @@ public class Reina {
 			
 		case NOROESTE:
 			fila = posicion.getFila() + pasos;
-			if (fila > 8)
+			columna = (char)(posicion.getColumna() - pasos);
+			if (fila > 8 || columna>'h')
 			{
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 			}

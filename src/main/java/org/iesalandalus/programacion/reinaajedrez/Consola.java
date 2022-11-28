@@ -112,21 +112,10 @@ public class Consola {
 		//iniciacilización de variables locales. Un entero para ingresar la opción
 		//y un booleano para la verificación de la entrada mediante un ciclo do-while
 		int eligedireccion;
-		boolean bandera = false;
-		
-		do
-		{
-			System.out.println("Elija una dirección para mover la REINA");
-			eligedireccion = Entrada.entero();
-			
-			if (eligedireccion>8 || eligedireccion<1)
-			{
-				System.out.println("Opción inválida, intente nuevamente");
-				bandera = true;
-			} else 
-				bandera = false;
-				
-		}while (bandera == true);
+	
+		System.out.println("Elija una dirección para mover la REINA");
+		eligedireccion = Entrada.entero();
+	
 		
 		// establece la dirección en que se moverá la reina según la correspondencia con el menú de direcciones. 
 		if (eligedireccion == 1)
@@ -158,34 +147,23 @@ public class Consola {
 		{
 			return Direccion.OESTE;
 		}
-		else
+		else if (eligedireccion == 8)
 		{
 			return Direccion.NOROESTE;
 		}
+		else 
+			return Direccion.valueOf(null);
 	}
 	
 	// método para ingresar el número de pasos que se moverá la Reina.
 	public static int elegirPasos()
 	{
 		int eligepasos;
-		boolean bandera = false;
-		do 
-		{
-			System.out.println("Elija un número de pasos que desea mover la REINA");
-			
-			eligepasos = Entrada.entero();
-			
-			if (eligepasos < 1 || eligepasos > 7) {
-				
-				System.out.println(" El número de pasos ingresado no es válido ");
-				
-				bandera = true;
-			}
-			else 
-				bandera = false;
-		} while (bandera == true);
 		
-		
+		System.out.println("Elija un número de pasos que desea mover la REINA");
+			
+		eligepasos = Entrada.entero();
+			
 		return eligepasos;
 	}
 	

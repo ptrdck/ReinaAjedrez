@@ -12,7 +12,9 @@ public class MainApp {
 	public static void main(String[] args) {
 		
 		Consola.mostrarMenu();
+		System.out.println("");
 		ejecutarOpcion(Consola.elegirOpcionMenu());
+		System.out.println("");
 		
 	}
 	
@@ -35,12 +37,14 @@ public class MainApp {
 				Consola.mostrarMenuDirecciones();;
 				mover();
 				mostrarReina();
+				System.out.println("");
 				
 			}
 			catch(Exception e){
 				
 				mover();
-				System.out.println(e);
+				System.out.println(e.getMessage());
+				System.out.println("");
 				
 			}
 			finally 
@@ -49,6 +53,7 @@ public class MainApp {
 				Consola.mostrarMenu();
 				mostrarReina();
 				ejecutarOpcion(Consola.elegirOpcionMenu());
+				System.out.println("");
 				
 			}
 		break;	
@@ -68,18 +73,21 @@ public class MainApp {
 				Consola.mostrarMenuDirecciones();
 				mover();
 				mostrarReina();
+				System.out.println("");
 				
 			}
 			catch(Exception e)
 			{
 				mover();
-				System.out.println(e);
+				System.out.println(e.getMessage());
+				System.out.println("");
 			}
 			finally
 			{
 				Consola.mostrarMenu();;
 				mostrarReina();
 				ejecutarOpcion(Consola.elegirOpcionMenu());
+				System.out.println("");
 			}
 			break;
 		}
@@ -94,17 +102,21 @@ public class MainApp {
 				mostrarReina();
 				Consola.mostrarMenuDirecciones();
 				mover();
+				mostrarReina();
+				System.out.println("");
 			}
 			catch(Exception e)
 			{
 				mover();
-				System.out.println(e);
+				System.out.println(e.getMessage());
+				System.out.println("");
 			}
 			finally 
 			{
 				Consola.mostrarMenu();
 				mostrarReina();
 				ejecutarOpcion(Consola.elegirOpcionMenu());
+				System.out.println("");
 				
 			}
 			
@@ -125,12 +137,14 @@ public class MainApp {
 	private static void crearReinaDefecto()
 	{
 		reina = new Reina();
+		System.out.println("");
 	}
 	
 	// Método para crear una Reina eligiendo el color, osea, ingresando por parámetro el color. 
 	private static void crearReinaColor()
 	{
 		reina = new Reina(Consola.elegirOpcion());
+		System.out.println("");
 	}
 	
 	// Método para mover la Reina
@@ -142,11 +156,13 @@ public class MainApp {
 		{
 			reina.mover(Consola.elegirDireccion(),Consola.elegirPasos());
 			mostrarReina();
+			System.out.println("");
 			
 		} 
-		catch (OperationNotSupportedException e) 
+		catch (OperationNotSupportedException | NullPointerException e)
 		{
-		
+			System.out.print(e.getMessage());
+			System.out.println("");
 		}
 		finally 
 		{
@@ -155,10 +171,12 @@ public class MainApp {
 			try 
 			{
 				reina.mover(Consola.elegirDireccion(), Consola.elegirPasos());
+				System.out.println("");
 			} 
-			catch	(OperationNotSupportedException e) 
+			catch	(OperationNotSupportedException | NullPointerException e) 
 			{
-				e.printStackTrace();
+				System.out.print(e.getMessage());
+				System.out.println("");
 			}
 			mostrarReina();
 		}

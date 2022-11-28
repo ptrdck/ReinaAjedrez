@@ -34,7 +34,7 @@ public class Posicion {
 	//Método set para insertar una fila y evaluar si es válida
 	private void setFila(int fila) 
 	{
-		if (fila<1 && fila>8) {
+		if (fila<1 || fila>8) {
 			throw new IllegalArgumentException("ERROR: Fila no válida.");
 		}
 		this.fila = fila;
@@ -50,7 +50,7 @@ public class Posicion {
 	// método para insertar y validar una columna 
 	private void setColumna(char columna) 
 	{
-		if (columna<'a' && columna>'h')
+		if (columna<'a' || columna>'h')
 		{
 			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		}
